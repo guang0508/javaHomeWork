@@ -1,0 +1,73 @@
+.head{
+    background-color: gainsboro;
+    height: 40px;
+    font-size:small;
+}
+a{
+    display:inline-block;
+    text-decoration: none;
+    color: gray;
+}
+#info>a{
+    margin-left:20px;
+}
+#info>#info1{
+    color:cadetblue;
+}
+#info{
+
+    width: 400px;
+    padding: 11.5px;
+    margin-left: 0;
+}
+#user>a{
+    margin-left:20px;
+}
+#user>#info1{
+    color:cadetblue;
+}
+#user{
+    width: 400px;
+    padding: 11.5px;
+    margin-left: 10%;
+}
+span{
+    display:inline-block;
+    float: left;
+    width: 50%;
+}
+.avatar{
+    display:inline-block;
+    float: left;
+    margin-left: 20%;
+    margin-top: 0;
+    height: 39px;
+    width: 39px;
+    border-radius: 19.5px;
+}
+/*.head{*/
+/*    background-color: gainsboro;*/
+/*    height: 40px;*/
+/*    font-size:small;*/
+/*}*/
+/*a{*/
+/*    display:inline-block;*/
+/*    text-decoration: none;*/
+/*    color: gray;*/
+/*}*/
+/*#info>a{*/
+/*    margin-left:20px;*/
+/*}*/
+/*#info>#info1{*/
+/*    color:cadetblue;*/
+/*} */
+
+/*#info{*/
+/*    width: 400px;*/
+/*    padding: 11.5px;*/
+/*    margin-left: 300px;*/
+/*}*/
+/*span{*/
+/*    display:inline-block;*/
+/*    width: 50%;*/
+/*}*/

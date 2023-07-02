@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="shop2_0-springboot:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/shop2_0_springboot_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="shop2_0-springboot/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="shop2_0-springboot" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

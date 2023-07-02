@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Document</title>
+</head>
+<body background="/image/login.jpg" style="background-size:100%;background-attachment: fixed">
+    <div class="container" >
+        <form id="pwd" th:action="@{/userController/login-servlet}" method="post">
+            <div class="header">
+                <div class="btn" onclick="byPwdOrByMsg(true)" >密码登录</div>
+                <div class="btn" onclick="byPwdOrByMsg(false)">短信登录</div>
+            </div>
+            <div class="input">
+                <input type="text" name="userName" placeholder="username" class="input-item">
+                <input type="password" name="password" placeholder="password" class="input-item">
+            </div>
+            <span th:if="${#httpServletRequest.getAttribute('message')!=null}"
+                  th:text="${#httpServletRequest.getAttribute('message')}"
+                  style="display: inline-block;
+                  color: rgb(216, 25, 25);
+                  margin-top: 10px;
+                  margin-left: 50px;">
+            </span>
+            <input type="submit" class="login-btn" value="登录" />
+            <div class="menu">
+                <a href="#">忘记账号?</a>
+                <a href="#">忘记密码?</a>
+                <a th:href="@{/userController/register}">去注册</a>
+            </div>
+        </form>
+        <form id="msg" th:action="@{/userController/login-servlet}" method="post" style="display: none;">
+            <div class="header" >
+                <div class="btn" onclick="byPwdOrByMsg(true)" >密码登录</div>
+                <div class="btn" onclick="byPwdOrByMsg(false)">短信登录</div>
+            </div>
+            <div class="input">
+                <input type="text" name="telephone" placeholder="telephone" class="input-item"/>
+                <div class="captcha">
+                    <input type="text" name="captcha" placeholder="captcha" class="input-item">
+                    <button type="button">点击发送验证码</button>
+                </input>
+                </div>
+            </div>
+            <span th:if="${#httpServletRequest.getAttribute('message')!=null}"
+                  th:text="${#httpServletRequest.getAttribute('message')}"
+                  style="display: inline-block;
+                  color: rgb(216, 25, 25);
+                  margin-top: 10px;
+                  margin-left: 50px;">
+            </span>
+            <input type="submit" class="login-btn" value="登录" />
+            <div class="menu">
+                <a href="#">忘记账号</a>
+                <a href="#">忘记密码</a>
+                <a th:href="@{/userController/register}">去注册</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+
+        function byPwdOrByMsg(flag){
+            var formByPwd = document.getElementById("pwd");
+            var formByMsg = document.getElementById("msg");
+            if(flag){
+                formByMsg.style.display='none';
+                formByPwd.style.display='block';
+            }else{
+
+                formByMsg.style.display='block';
+                formByPwd.style.display='none';
+            }
+        }
+    
+    </script>
+</body>
+</html>

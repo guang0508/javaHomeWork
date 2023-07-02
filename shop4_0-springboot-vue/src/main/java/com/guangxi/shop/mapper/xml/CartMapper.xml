@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.guangxi.shop.mapper.CartMapper">
+<!--    public List<CartItem> getAllCartItemList(String uId);-->
+    <select id="getAllCartItemList" resultType="com.guangxi.shop.entity.CartItemInfo" >
+        SELECT tb_cart_item.id,tb_product.`name`,tb_product.cover,tb_product.price,tb_product_specs.count,tb_product_specs.size,tb_product_specs.color,tb_product.shop_name
+        FROM tb_cart_item,tb_product,tb_product_specs
+        where tb_cart_item.specs_id=tb_product_specs.id
+          and tb_cart_item.product_id=tb_product.id
+          and tb_cart_item.user_id=#{uId}
+    </select>
+<!--    public int addCartItem(CartItem cartItem);-->
+    <insert id="addCartItem" parameterType="com.guangxi.shop.entity.CartItem">
+        insert into tb_cart_item value (#{id},#{userId},#{productId},#{price},#{specsId},#{createTime},#{updateTime})
+    </insert>
+<!--    int deleteCartItemById(String id);-->
+    <delete id="deleteCartItemById" >
+        delete from tb_cart_item where id=#{id}
+    </delete>
+<!--    CartItem getCartItemById(String id);-->
+    <select id="getCartItemById" resultType="com.guangxi.shop.entity.CartItem">
+        select * from tb_cart_item where id=#{id}
+    </select>
+<!--    BigDecimal getTotalPrice(String id);-->
+    <select id="getTotalPrice" resultType="java.math.BigDecimal">
+        SELECT SUM(tb_product.price*tb_product_specs.count)
+        FROM tb_cart_item,tb_product,tb_product_specs
+        where tb_cart_item.specs_id=tb_product_specs.id
+          and tb_cart_item.product_id=tb_product.id
+          and tb_cart_item.user_id=#{id}
+    </select>
+<!--    int decCount(String id);-->
+    <update id="decCount" >
+        update tb_product_specs set count=count-1 where id=(select specs_id from tb_cart_item where id=#{id})
+    </update>
+
+<!--    int incCount(String id);-->
+    <update id="incCount">
+        update tb_product_specs set count=count+1 where id=(select specs_id from tb_cart_item where id=#{id})
+    </update>
+
+<!--    int setCount(String id, BigDecimal newCount);-->
+    <update id="setCount">
+        update tb_product_specs set count=${newCount} where id=(select specs_id from tb_cart_item where id=#{id})
+    </update>
+</mapper>

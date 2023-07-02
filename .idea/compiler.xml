@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shop3_0-springboot-html" />
+        <module name="shop2_0-springboot" />
+        <module name="shop" />
+        <module name="shop4_0-springboot-vue" />
+        <module name="demo" />
+        <module name="TestHomework" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="shop2_0-springboot" options="-parameters" />
+      <module name="shop3_0-springboot-html" options="-parameters" />
+      <module name="shop4_0-springboot-vue" options="-parameters" />
+    </option>
+  </component>
+</project>

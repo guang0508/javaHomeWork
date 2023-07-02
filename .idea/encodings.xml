@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop2_0-springboot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop3_0-springboot-html/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop4_0-springboot-vue/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop4_0-springboot-vue/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

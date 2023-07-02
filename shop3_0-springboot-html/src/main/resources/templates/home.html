@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/head.css">
+    <link rel="stylesheet" href="/css/center.css">
+    <link rel="stylesheet" href="/css/bottom.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <div th:if="${session.user==null}" >
+            <img class="avatar" src="/image/default.png">
+            <span  id="info">
+                <a id="info1" th:href="@{/userController/login}">亲，请登录</a>
+                <a id="info2" th:href="@{/userController/register}">点击注册</a>
+            </span>
+        </div>
+        <div th:if="${session.user!=null}">
+            <img th:if="${session.user.icon!=null}" class="avatar" th:src="${session.user.icon}">
+            <img th:if="${session.user.icon==null}" class="avatar" src="/image/default.png">
+            <span id="info">
+                <a id="info1" th:text="'hi,'+${session.user.user_name}" href="#"></a>
+                <a id="info2" th:href="@{/userController/exit-servlet}">退出登录</a>
+            </span>
+        </div>
+
+        <span id="user">
+            <a id="info1" href="#">首页</a>
+            <a id="info2" href="#">我的主页</a>
+            <a id="info2" href="#">购物车</a>  
+            <a id="info2" href="#">我的订单</a>  
+            <a id="info2" href="#">联系客服</a>     
+        </span>
+    </div>
+
+    <div class="center">
+        <form class="example" action="/" >
+            <input type="text" placeholder="请输入.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i>搜索</button>
+        </form>
+        <div class="product">
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <a href="#">-->
+<!--                            <img src="-->
+<!--                            https://edu-gx.oss-cn-beijing.aliyuncs.com/shop/default/nanzhuang.jpg"/>-->
+<!--                        </a>-->
+<!--                        <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                        <p class="price">￥199</p>-->
+<!--                        <p class="business">李宁官方旗舰店</p>-->
+<!--                        <p class="sales">月销 2000+</p>-->
+<!--                        <p class="buy">-->
+<!--                        <a href="#">收藏</a>-->
+<!--                        <a href="#">加入购物车</a>-->
+<!--                        </p>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="/image/nanzhuang.jpg"/>-->
+<!--                            </a>-->
+<!--                            <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                            <p class="price">￥199</p>-->
+<!--                            <p class="business">李宁官方旗舰店</p>-->
+<!--                            <p class="sales">月销 2000+</p>-->
+<!--                            <p class="buy">-->
+<!--                            <a href="#">收藏</a>-->
+<!--                            <a href="#">加入购物车</a>-->
+<!--                            </p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="/image/nanzhuang.jpg"/>-->
+<!--                            </a>-->
+<!--                            <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                            <p class="price">￥199</p>-->
+<!--                            <p class="business">李宁官方旗舰店</p>-->
+<!--                            <p class="sales">月销 2000+</p>-->
+<!--                            <p class="buy">-->
+<!--                            <a href="#">收藏</a>-->
+<!--                            <a href="#">加入购物车</a>-->
+<!--                            </p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="/image/nanzhuang.jpg"/>-->
+<!--                            </a>-->
+<!--                            <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                            <p class="price">￥199</p>-->
+<!--                            <p class="business">李宁官方旗舰店</p>-->
+<!--                            <p class="sales">月销 2000+</p>-->
+<!--                            <p class="buy">-->
+<!--                            <a href="#">收藏</a>-->
+<!--                            <a href="#">加入购物车</a>-->
+<!--                            </p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="/image/nanzhuang.jpg"/>-->
+<!--                            </a>-->
+<!--                            <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                            <p class="price">￥199</p>-->
+<!--                            <p class="business">李宁官方旗舰店</p>-->
+<!--                            <p class="sales">月销 2000+</p>-->
+<!--                            <p class="buy">-->
+<!--                            <a href="#">收藏</a>-->
+<!--                            <a href="#">加入购物车</a>-->
+<!--                            </p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="/image/nanzhuang.jpg"/>-->
+<!--                            </a>-->
+<!--                            <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                            <p class="price">￥199</p>-->
+<!--                            <p class="business">李宁官方旗舰店</p>-->
+<!--                            <p class="sales">月销 2000+</p>-->
+<!--                            <p class="buy">-->
+<!--                            <a href="#">收藏</a>-->
+<!--                            <a href="#">加入购物车</a>-->
+<!--                            </p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="/image/nanzhuang.jpg"/>-->
+<!--                            </a>-->
+<!--                            <p class="title">吴亦凡同款男女装潮流秋冬款保暖韩系学生加绒连帽体闲运动卫衣</p>-->
+<!--                            <p class="price">￥199</p>-->
+<!--                            <p class="business">李宁官方旗舰店</p>-->
+<!--                            <p class="sales">月销 2000+</p>-->
+<!--                            <p class="buy">-->
+<!--                            <a href="#">收藏</a>-->
+<!--                            <a href="#">加入购物车</a>-->
+<!--                            </p>-->
+<!--                        </li>-->
+                    <li th:each="product: ${session.allProductList}">
+                        <a href="#">
+                            <img th:src="${product.cover}"/>
+                        </a>
+                        <p class="title" th:text="${product.name}"></p>
+                        <p class="price" th:text="'￥'+${product.price}"></p>
+                        <p class="business">李宁官方旗舰店</p>
+                        <p class="sales" th:text="'销量'+${product.sales}"></p>
+                        <p class="buy">
+                            <a href="#">收藏</a>
+                            <a href="#">加入购物车</a>
+                        </p>
+                    </li>
+                </ul>
+            <div class="clearfloat"></div>
+        </div>
+    </div><br>
+
+    <div class="bottom">
+        <p>我是底部 版权信息 联系我们@xxxxxx</p>
+        <p>xxxxxxxxxxxxxxx</p>
+        <p>Author @马光熙</p>
+    </div>
+
+
+    </div><br>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.guangxi.shop.mapper.CategoryMapper">
+    <!--List<Category> getCategoryByParentId(String parentId)-->
+    <select id="getCategoryByParentId" resultType="com.guangxi.shop.entity.Category">
+        select * from tb_category where parent_id = #{parentId}
+    </select>
+    <!--    //根据分类id查询分类
+    public Category getCategoryById(String id);-->
+    <select id="getCategoryById" resultType="com.guangxi.shop.entity.Category">
+        select * from tb_category where id = #{id}
+    </select>
+</mapper>

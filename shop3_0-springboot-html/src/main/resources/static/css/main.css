@@ -1,0 +1,10 @@
+body{
+    overflow:auto;
+    zoom:1;
+    width: 1900px;
+    margin: 0 auto;
+}
+
+.clearfloat{
+    clear: both;
+}
